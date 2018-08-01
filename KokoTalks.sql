@@ -14,7 +14,7 @@ CREATE TABLE [dbo].[Message] (
 	message_id			int			 NOT NULL IDENTITY(1,1),
 	message_delivered	TIME		 NOT NULL,
 	messageUnread		bit			 NOT NULL,
-	text				varchar(500) NOT NULL
+	text				nvarchar(500) NOT NULL
 	
 	CONSTRAINT message_pk PRIMARY KEY ([message_id] ASC)
 );
