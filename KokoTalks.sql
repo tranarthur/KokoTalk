@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[Profile] (
 
 CREATE TABLE [dbo].[Friends] (
 	profile_id int NOT NULL,
-	newMessage bit NOT NULL,
+	newMessage bit ,
 	friend_id int NOT NULL, /*This is another profile id to find a friends info*/
 	
 	CONSTRAINT friend_pk PRIMARY KEY ([friend_id], [profile_id])
