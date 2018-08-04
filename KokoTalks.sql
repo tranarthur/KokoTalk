@@ -1,23 +1,15 @@
+Create DATABASE KokoTalksDB;
 USE KokoTalksDB;
 GO
 
-CREATE TABLE [dbo].[Chat] (
-	chat_id			int			NOT NULL IDENTITY(1,1),
+CREATE TABLE [dbo].[Messages] (
+	time            DATETIME,
 	sender_id		varchar(50) NOT NULL,
 	receriver_id	varchar(50) NOT NULL,
-	message_id		int,
-	
-	CONSTRAINT chat_pk PRIMARY KEY ([chat_id] ASC)
-);
-
-CREATE TABLE [dbo].[Message] (
-	message_id			int			 NOT NULL IDENTITY(1,1),
-	message_delivered	TIME		 NOT NULL,
-	messageUnread		bit			 NOT NULL,
 	text				nvarchar(500) NOT NULL
 	
-	CONSTRAINT message_pk PRIMARY KEY ([message_id] ASC)
 );
+
 
 CREATE TABLE [dbo].[Profile] (
 	profile_id		int			NOT NULL IDENTITY(1,1),
@@ -44,3 +36,9 @@ CREATE TABLE [dbo].[Friends] (
 	Dennis Arthur 0
 	Dennis Richard 0
 */
+
+
+
+INSERT INTO Messages VALUES (CURRENT_TIMESTAMP , 'Henrique' , 'Dennis', 'Would you look at that');
+
+Select * from messages;
