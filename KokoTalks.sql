@@ -13,6 +13,7 @@ CREATE TABLE [dbo].[Messages] (
 
 CREATE TABLE [dbo].[Profile] (
 	profile_id		int			NOT NULL IDENTITY(1,1),
+	profile_pic		varchar(250),
 	profile_status	varchar(25) NOT NULL,
 	num_of_friends	int			NOT NULL,
 	sex				bit			NOT NULL,
