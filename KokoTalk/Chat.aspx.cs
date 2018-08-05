@@ -39,7 +39,7 @@ namespace KokoTalk
                   connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
                     conn = new SqlConnection(connectionString);
                 conn.Open();
-                 queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp +"','"+ chatp +"','"+ TextBox1.Text+ "')" ;
+                 queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp +"','"+ chatp +"','"+ TextBox1.Text+ "', 1)" ;
                  com = new SqlCommand(queryString, conn);
 
                  com.ExecuteNonQuery();
@@ -133,21 +133,14 @@ com.ExecuteNonQuery();
 
 
 
-            /*
-       try{
-      string session = HttpContext.Current.Session["currentUser"].ToString();
-      string chatter = HttpContext.Current.Session["chatUser"].ToString();
-      string queryString;
-      string id = "";
-      Message[] inbox = new Message[15];
-      conn = ConectionFactory();
+
 
       conn.Open();
-      queryString = "UPDATE "+ session +"Friends SET (read=TRUE)";
+      queryString = "UPDATE Messages SET (newmessage=0) WHERE  WHERE  (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ";
       com = new SqlCommand(queryString, conn);
 
       com.ExecuteNonQuery();
-      */
+
        
           
 
