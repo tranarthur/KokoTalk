@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <link href="" rel="stylesheet" />
     <style>
         body {
     background-color: azure;
@@ -31,10 +32,7 @@
             text-align: left;
             background: #00aabb;
             border-radius: .4em;
-            
         }
-
-            
 
         .speech-bubble2 {
             padding:10px;
