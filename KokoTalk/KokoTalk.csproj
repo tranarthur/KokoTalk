@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="chat.html" />
     <Content Include="Contacts.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

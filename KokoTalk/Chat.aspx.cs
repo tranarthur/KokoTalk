@@ -105,11 +105,11 @@ com.ExecuteNonQuery();
                 connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
                 conn = new SqlConnection(connectionString);
                 conn.Open();
-                    queryString = "SELECT * FROM Messages WHERE  (sender_id = '" + sessionp+ "' AND receriver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ORDER BY Time DESC";
+                    queryString = "SELECT * FROM Messages WHERE  (sender_id = '" + sessionp+ "' AND receriver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ORDER BY Time ASC";
                     com = new SqlCommand(queryString, conn);
                     SqlDataReader dr = com.ExecuteReader();
                    
-                    while (dr.Read() && x <= 7)
+                    while (dr.Read() && x < 15)
                     {
                     Message mes = new Message();
                     mes.sender = dr["sender_id"].ToString();
@@ -154,7 +154,7 @@ com.ExecuteNonQuery();
            
 
                 Literal1.Text = "";
-            for (int i = 7; i >= 0; i--)
+            for (int i = 0; i < x; i++)
             {
                 //this is testing code!!! Remove after!
                 //iteral1.Text += "<div class='speech-bubble'> <div class='message'> Hey bro, how are you?</div><div class='time'>" + DateTime.Now + "</div></div>";
@@ -163,11 +163,11 @@ com.ExecuteNonQuery();
                 
                 if (inbox[i].sender.Equals(sessionp))
                 {
-                    Literal1.Text += "<div class='speech'><div class='speech-bubble2'> <div class='message'> "+ inbox[i].message +"</div><div class='time'>"+ inbox[i].time+"</div></div></div>";
+                    Literal1.Text += "<div class='speech-bubble'> <div class='message'> "+ inbox[i].message +"</div><div class='time'>"+ inbox[i].time+"</div></div>";
                 }
                 else
                 {
-                    Literal1.Text += "<div class='speech'><div class='speech-bubble'> <div class='name>" + inbox[i].sender + "</div> <div class='message'> "+ inbox[i].message +"</div><div class='time'>"+ inbox[i].time+"</div></div></div>";
+                    Literal1.Text += "<div class='speech-bubble2'> <div class='name>" + inbox[i].sender + "</div> <div class='message'> "+ inbox[i].message +"</div><div class='time'>"+ inbox[i].time+"</div></div>";
                 }
            
        
