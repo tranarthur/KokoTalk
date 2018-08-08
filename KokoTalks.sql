@@ -17,13 +17,19 @@ CREATE TABLE [dbo].[Messages] (
 
 CREATE TABLE [dbo].[Profile] (
 	profile_id		int			IDENTITY(1,1),
-	profile_pic		varchar(250),
-	profile_status	varchar(25) NOT NULL,
-	num_of_friends	int,
-	sex				char(1)			NOT NULL,
-	email			varchar(50) NOT NULL,
+	username		varchar(50) NOT NULL,
 	password		varchar(30) NOT NULL,
-	name			varchar(50) NOT NULL,
+	email			varchar(50) NOT NULL,
+	sex				char(1),
+	age				int,
+	num_of_friends 	int,
+	city			varchar(100),
+	province		varchar(100),
+	job				varchar(100),
+	school			varchar(100),
+	profile_pic		varchar(250),
+	profile_status	nvarchar(140),
+	
 	CONSTRAINT profile_pk PRIMARY KEY ([profile_id] ASC)
 );
  
@@ -35,13 +41,17 @@ CREATE TABLE [dbo].[Friends] (
 	
 );
 
-/*
-	Friends:
-	Dennis Henri 0
-	Dennis Arthur 0
-	Dennis Richard 0
-*/
+CREATE TABLE [dbo].[Posts] (
+	post_id int IDENTITY(1,1),
+	profile_id int NOT NULL,
+	post nvarchar(500) NOT NULL,
+	postdate DATETIME NOT NULL,
+	CONSTRAINT posts_pk PRIMARY KEY ([profile_id]),
+	CONSTRAINT [profile_fk] FOREIGN KEY (profile_id) REFERENCES [dbo].[Profile] (profile_id)
+	
+);
 
+INSERT INTO dbo.Profile (username, password, email, sex, profile_pic, profile_status) VALUES ('Henrique'),'a','henrique@email.com','')
 
 
 INSERT INTO Messages VALUES (CURRENT_TIMESTAMP , 'Henrique' , 'Dennis', 'Would you look at that');
