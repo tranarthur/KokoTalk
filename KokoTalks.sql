@@ -54,11 +54,11 @@ CREATE TABLE [dbo].[Posts] (
 
 INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, company, school, profile_pic, profile_status) VALUES ('Henrique','password','henrique@email.com', 35, 'M', 3, 'Brantford', 'Ontario', 'System Administrator', 'Tim Hortons', 'Universidade Estadual de Campinas', 'images/profile/henrique-profile-pic.jpg','Look, I''ll make it all manageable');
 
-INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, company, school, profile_pic, profile_status) VALUES ('Dennis','password','dennis@email.com', 18, 'M', 3, 'Mississauga',  'Ontario', 'Technical Support', 'Google', 'University of Toronto', 'images/profile/dennis-profile-pic.jpg','I''ll give you the D 😉');
+INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, company, school, profile_pic, profile_status) VALUES ('Dennis','password','dennis@email.com', 18, 'M', 3, 'Mississauga',  'Ontario', 'Technical Support', 'Google', 'University of Toronto', 'images/profile/dennis-profile-pic.jpg','Hola!');
 
 INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, company, school, profile_pic, profile_status) VALUES ('Arthur','password','arthur@email.com', 25, 'M', 3, 'Brampton', 'Ontario', 'Web Developer', 'Self-Employed', 'Sheridan College', 'images/profile/arthur-profile-pic.jpg','404 STATUS NOT FOUND');
 
-INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, school, profile_pic, profile_status) VALUES ('Richard','password','richard@email.com', 22, 'M', 3, 'Mississauga', 'Ontario', 'Student', 'Harvard University', 'images/profile/richard-profile-pic.jpg','You know what rhymes with Rick 😏');
+INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, school, profile_pic, profile_status) VALUES ('Richard','password','richard@email.com', 22, 'M', 3, 'Mississauga', 'Ontario', 'Student', 'Harvard University', 'images/profile/richard-profile-pic.jpg','我喜欢大屁股');
 
 INSERT INTO dbo.Friends VALUES (1,2);
 INSERT INTO dbo.Friends VALUES (2,1);
