@@ -76,37 +76,6 @@ INSERT INTO dbo.Messages (time, sender_id, receiver_id, text, newMessage) VALUES
 INSERT INTO dbo.Messages (time, sender_id, receiver_id, text, newMessage) VALUES ('2018-08-08 20:01:10',3,1,'Test',0);
 INSERT INTO dbo.Messages (time, sender_id, receiver_id, text, newMessage) VALUES ('2018-08-09 20:01:10',1,3,'New',0);
 
-
---DELETE FROM dbo.Messages WHERE sender_id = 3 OR receiver_id =3;
-
-
-
---SELECT DISTINCT f.friend_id, p.fullname, m.text, m.time, m.newMessage FROM dbo.Friends f INNER JOIN dbo.Profile p ON f.friend_id = p.profile_id INNER JOIN dbo.Messages m ON f.friend_id = m.sender_id AND f.profile_id = m.receiver_id OR f.friend_id = m.receiver_id AND f.profile_id = m.sender_id WHERE f.profile_id = 1 ORDER BY time DESC;
---SELECT DISTINCT f.friend_id, p.fullname,m.message_id, m.text, m.time, m.newMessage FROM dbo.Friends f INNER JOIN dbo.Profile p ON f.friend_id = p.profile_id LEFT OUTER JOIN dbo.Messages m ON f.profile_id = m.sender_id OR f.profile_id = m.receiver_id WHERE f.profile_id = 1 AND (m.sender_id=1 OR m.receiver_id=1) ORDER BY time DESC;
-SELECT f.friend_id, p.fullname, m.message_id, m.text, m.receiver_id, MAX(m.time) FROM dbo.Friends f INNER JOIN dbo.Profile p ON f.friend_id = p.profile_id LEFT OUTER JOIN dbo.Messages m ON m.receiver_id = f.profile_id AND m.sender_id = f.friend_id OR m.sender_id = f.profile_id AND m.receiver_id = f.friend_id  WHERE f.profile_id = 1 GROUP BY friend_id,fullname,message_id,text,receiver_id ORDER BY max(time) DESC;
-SELECT * FROM dbo.Profile;
-
---select max(message_id) from dbo.Messages WHERE sender_id = 1 or receiver_id = 1 group by sender_id;
-select message_id,sender_id,receiver_id from dbo.Messages WHERE sender_id = 1 or receiver_id = 1;
-/*
-select f.friend_id, p.fullname, m.sender_id, m.text ,m.time,m.newMessage
-	FROM dbo.Friends f LEFT OUTER JOIN dbo.Profile p 
-		ON f.friend_id = p.profile_id 
-	LEFT OUTER JOIN  
-		(select c1.friend_id, max(c1.message_id) AS message_id from (
-			select message_id, receiver_id AS friend_id 
-				from dbo.Messages 
-			where sender_id = 1 
-			UNION 
-			select message_id, sender_id AS friend_id 
-				from dbo.Messages 
-			where receiver_id = 1) c1
-		GROUP BY c1.friend_id) c2
-	ON f.friend_id = c2.friend_id 
-	 INNER JOIN dbo.Messages m ON m.message_id = c2.message_id
-	 WHERE f.profile_id = 1; */
-
-	
 select f.friend_id, p.fullname, c3.sender_id, c3.text, c3.time 
 	FROM dbo.Friends f LEFT OUTER JOIN dbo.Profile p 
 		ON f.friend_id = p.profile_id 
@@ -125,10 +94,5 @@ select f.friend_id, p.fullname, c3.sender_id, c3.text, c3.time
 	 ON f.friend_id = c3.friend_id 
 	WHERE f.profile_id = 1
 	 ORDER BY time DESC; 
-
---select distinct f.friend_id , m.message_id, max(m.time) FROM dbo.Friends f INNER JOIN dbo.Messages m ON m.receiver_id = f.profile_id AND m.sender_id = f.friend_id OR m.sender_id = f.profile_id AND m.receiver_id = f.friend_id WHERE f.profile_id = 1 GROUP BY f.friend_id, m.message_id;
-
---UPDATE dbo.Profile SET num_of_friends = 0;
---INSERT INTO Messages VALUES (CURRENT_TIMESTAMP , 'Henrique' , 'Dennis', 'Would you look at that');
 
 Select * from messages;
