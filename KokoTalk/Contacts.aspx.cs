@@ -11,7 +11,7 @@ namespace KokoTalk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //ARTHURTRAN0524\MSSQLSERVER02
         }
     }
 }
