@@ -28,7 +28,6 @@ CREATE TABLE [dbo].[Messages] (
 	sender_id		int NOT NULL,
 	receiver_id		int NOT NULL,
 	text			nvarchar(500) NOT NULL,
-	newMessage bit,
 	CONSTRAINT [messages_pk] PRIMARY KEY (message_id),
 	CONSTRAINT [sender_fk] FOREIGN KEY (sender_id) REFERENCES [dbo].[Profile] (profile_id),
 	CONSTRAINT [receiver_fk] FOREIGN KEY (receiver_id) REFERENCES [dbo].[Profile] (profile_id)
@@ -37,6 +36,7 @@ CREATE TABLE [dbo].[Messages] (
 CREATE TABLE [dbo].[Friends] (
 	profile_id int NOT NULL,
 	friend_id int NOT NULL, /*This is another profile id to find a friends info*/
+	newMessage bit,
 	CONSTRAINT friend_pk PRIMARY KEY ([friend_id], [profile_id]),
 	CONSTRAINT [friend_fk] FOREIGN KEY (friend_id) REFERENCES [dbo].[Profile] (profile_id)
 	
@@ -59,12 +59,12 @@ INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, ci
 
 INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, school, profile_pic, profile_status) VALUES ('Richard','password','richard@email.com', 22, 'M', 3, 'Mississauga', 'Ontario', 'Student', 'Harvard University', 'images/profile/richard-profile-pic.jpg','我喜欢大屁股');
 
-INSERT INTO dbo.Friends VALUES (1,2);
-INSERT INTO dbo.Friends VALUES (2,1);
-INSERT INTO dbo.Friends VALUES (1,3);
-INSERT INTO dbo.Friends VALUES (3,1);
-INSERT INTO dbo.Friends VALUES (1,4);
-INSERT INTO dbo.Friends VALUES (4,1);
+INSERT INTO dbo.Friends VALUES (1,2,0);
+INSERT INTO dbo.Friends VALUES (2,1,0);
+INSERT INTO dbo.Friends VALUES (1,3,0);
+INSERT INTO dbo.Friends VALUES (3,1,0);
+INSERT INTO dbo.Friends VALUES (1,4,0);
+INSERT INTO dbo.Friends VALUES (4,1,0);
 
 INSERT INTO dbo.Messages (time, sender_id, receiver_id, text, newMessage) VALUES ('2018-08-08 19:07:30',2,1,'Hey!',0);
 INSERT INTO dbo.Messages (time, sender_id, receiver_id, text, newMessage) VALUES ('2018-08-08 19:08:40',1,2,'How are you?',0);
