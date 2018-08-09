@@ -35,9 +35,9 @@ namespace KokoTalk
                 conn = new SqlConnection(connectionString);
                 conn.Open();
                 queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + chatp + "','" + TextBox1.Text + "', 1)";
-                com = new SqlCommand(queryString, conn);            
+                com = new SqlCommand(queryString, conn);
                 com.ExecuteNonQuery();
-      
+
             }
             catch (SqlException ex)
             {
@@ -49,36 +49,31 @@ namespace KokoTalk
                 TextBox1.Text = "";
             }
 
+
+
+
+
+            try {
+                conn.Open();
+                queryString = "UPDATE Friends SET newMessage = 0 WHERE (profile = '" + sessionp + "' AND friend = '" + chatp + "')";
+            com = new SqlCommand(queryString, conn);
+
+                com.ExecuteNonQuery();
+
+
+            } catch (SqlException ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally {
+                if (conn != null) conn.Close();
+
+            }
         }
-
-        /*
-
-        try{
-        string chatter = HttpContext.Current.Session["chatUser"].ToString();
-        string queryString;
-        string id = "";
-        Message[] inbox = new Message[15];
-
-
-        conn.Open();
-        queryString = "UPDATE "+ receiver +"Friends SET (read=FALSE)";
-        com = new SqlCommand(queryString, conn);
-
-        com.ExecuteNonQuery();
-
-
-                        } catch (SqlException ex)
-                    {
-                        Response.Write(ex.Message);
-                    }
-                    finally {
-                       if (conn != null) conn.Close();
-
-                }
-
-                    */
+                    
         protected void Timer1_Tick(object sender, EventArgs e)
-        {
+        {   
+
             Message[] inbox = new Message[15];
             string connectionString = null;
             SqlConnection conn = null;
@@ -142,7 +137,27 @@ namespace KokoTalk
 
             }
 
-        }
+            try
+            {
+                conn.Open();
+                queryString = "UPDATE Friends SET newMessage = 0 WHERE (profile = '" + chatp + "' AND friend = '" + sessionp + "')";
+            com = new SqlCommand(queryString, conn);
+
+                com.ExecuteNonQuery();
+
+
+            }
+            catch (SqlException ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+
+            }
+        
+    }
     }
 
 
