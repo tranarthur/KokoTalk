@@ -49,7 +49,6 @@ CREATE TABLE [dbo].[Posts] (
 	postdate DATE NOT NULL,
 	CONSTRAINT posts_pk PRIMARY KEY ([profile_id]),
 	CONSTRAINT [profile_fk] FOREIGN KEY (profile_id) REFERENCES [dbo].[Profile] (profile_id)
-	
 );
 
 INSERT INTO dbo.Profile (fullname, password, email, age, sex, num_of_friends, city, province, job, company, school, profile_pic, profile_status) VALUES ('Henrique','password','henrique@email.com', 35, 'M', 3, 'Brantford', 'Ontario', 'System Administrator', 'Tim Hortons', 'Universidade Estadual de Campinas', 'images/profile/henrique-profile-pic.jpg','Look, I''ll make it all manageable');
