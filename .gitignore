@@ -9,3 +9,12 @@
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
 >>>>>>> 5eb92c6d808f4614e8fff91a0418ab972d12ced3
+.vs/KokoTalk/DesignTimeBuild/.dtbcache
+.vs/KokoTalk/v15/.suo
+KokoTalk/Connected Services/ServiceReference1/Reference1.cs
+KokoTalk/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+KokoTalk/obj/Debug/KokoTalk.csproj.CoreCompileInputs.cache
+KokoTalk/obj/Debug/TempPE/Connected Services.ServiceReference1.Reference1.cs.dll
+WCFKokoTalks/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+WCFKokoTalks/obj/Debug/WCFKokoTalks.csproj.CoreCompileInputs.cache
+WCFKokoTalks/obj/Debug/WCFKokoTalks.csprojAssemblyReference.cache
