@@ -80,10 +80,12 @@
     <Content Include="images\profile\henrique-profile-pic.jpg" />
     <Content Include="images\profile\richard-profile-pic.jpg" />
     <Content Include="Profile.aspx" />
+    <Content Include="Signup.aspx" />
     <Content Include="Web.config" />
     <Content Include="Chat.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionClass.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,6 +118,13 @@
     </Compile>
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
