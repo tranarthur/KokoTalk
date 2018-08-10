@@ -9,6 +9,7 @@
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
 >>>>>>> 5eb92c6d808f4614e8fff91a0418ab972d12ced3
+<<<<<<< HEAD
 .vs/KokoTalk/DesignTimeBuild/.dtbcache
 .vs/KokoTalk/v15/.suo
 KokoTalk/Connected Services/ServiceReference1/Reference1.cs
@@ -32,3 +33,9 @@ WCFKokoTalks/bin/WCFKokoTalks.pdb
 WCFKokoTalks/bin/WCFKokoTalks.dll
 KokoTalk.sln
 .vs/KokoTalk/v15/.suo
+=======
+.vs/KokoTalk/v15/Server/sqlite3/storage.ide-wal
+.vs/config/applicationhost.config
+.vs/config/applicationhost.config
+.vs/KokoTalk/v15/Server/sqlite3/storage.ide-wal
+>>>>>>> 2fc7417ae229a4c93c566c39040dbb70fdcdb7ab
