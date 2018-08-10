@@ -25,17 +25,16 @@ namespace KokoTalk
         {
 
             // This connection is to retrieve the name of the person you are chatting with
-            string connectionString = null;
+      
             SqlConnection conn = null;
             SqlCommand com;
             string queryString;
 
             try
             {
-
-                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalkDB; Integrated Security=SSPI; Persist Security Info=false";
-                conn = new SqlConnection(connectionString);
-                conn.Open();
+                
+                conn = ConnectionSQL.connectDB("MSI\\SQLEXPRESS");
+        
                 queryString = "SELECT * FROM Profile WHERE profile_id ='" + chatp + "  '";
                 com = new SqlCommand(queryString, conn);
                 SqlDataReader dr = com.ExecuteReader();
@@ -57,16 +56,15 @@ namespace KokoTalk
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            string connectionString = null;
+       
             SqlConnection conn = null;
             SqlCommand com;
             string queryString;
             try
             {
 
-                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalkDB; Integrated Security=SSPI; Persist Security Info=false";
-                conn = new SqlConnection(connectionString);
-                conn.Open();
+                conn = ConnectionSQL.connectDB("MSI\\SQLEXPRESS");
+
                 queryString = "INSERT INTO Messages(time,sender_id,receiver_id,text) VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + chatp + "',@Text)";
                 com = new SqlCommand(queryString, conn);
                 com.Parameters.AddWithValue("@Text", TextBox1.Text);
@@ -123,9 +121,8 @@ namespace KokoTalk
             try
             {
 
-                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalkDB; Integrated Security=SSPI; Persist Security Info=false";
-                conn = new SqlConnection(connectionString);
-                conn.Open();
+                conn = ConnectionSQL.connectDB("MSI\\SQLEXPRESS");
+
                 queryString = "SELECT * FROM Messages WHERE (sender_id = '" + sessionp + "' AND receiver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receiver_id = '" + sessionp + "') ORDER BY Time DESC";
                 com = new SqlCommand(queryString, conn);
                 SqlDataReader dr = com.ExecuteReader();

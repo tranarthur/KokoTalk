@@ -44,7 +44,7 @@ body {
     padding: 10px;
     display: inline-block;
     margin-top: 5px;
-
+    float: left;
     text-align: left;
     background: #E6E5EA;
     border-radius: .5em;
@@ -55,7 +55,7 @@ body {
     padding: 10px;
     margin-top: 5px;
     display: inline-block;
- 
+    float: right;
     text-align: right;
     background: #157EFB;
     border-radius: .5em;
