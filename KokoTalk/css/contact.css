@@ -34,6 +34,7 @@ body {
 }
 
 #logout {
+    padding-top: 10px;
     color: white;
     float: right;
     font-size: 20px;
