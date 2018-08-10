@@ -13,7 +13,7 @@ namespace KokoTalk
 
         public static SqlConnection connectDB(string userName)
         {
-            string connectionString = "Data Source=" + userName + ";Initial Catalog=CarSalesDB;" 
+            string connectionString = "Data Source=" + userName + ";Initial Catalog=KokoTalkDB;" 
                 + " Integrated Security = SSPI; Persist Security Info = False";
 
             conn = new SqlConnection(connectionString);
