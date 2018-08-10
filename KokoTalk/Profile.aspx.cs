@@ -16,16 +16,42 @@ namespace KokoTalk
 
             UserProfile profile = makeProfile(id);
 
-            string start = "<div id='posts'>< div style = 'background-color:white; padding: 10px;'>";
-            string text = "";
-            string end = "<p style = 'float: right'> Time, date </p></br></br></div></div> ";
+            name.Text = profile.fullname;
+            age.Text = profile.age;
+            status.Text = profile.profile_status;
+            province.Text = profile.province;
+            city.Text = profile.city;
+            sex.Text = profile.sex;
+            work.Text = profile.company;
+            job.Text = profile.job;
+            school.Text = profile.school;
+            email.Text = profile.email;
+            friends.Text = profile.friends;
+
+            ServiceReference1.KokoServiceClient result = new ServiceReference1.KokoServiceClient();
+            Post[] posts = result.GetPost(id);
+
+            string start = "";
+
+            for (int i = 0; i < posts.Length; i++) {
+                start = "<div id='posts'>< div style = 'background-color:white; padding: 10px;'>";
+                start += "" + posts[i].getPost();
+                start += "<p style = 'float: right'>";
+                start += "" + posts[i].getTime();
+                start += "</p></br></br></div></div></br></br>";
+            }
 
             Literal1.Text += start;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string query = post.Text;
 
+            ServiceReference1.KokoServiceClient result = new ServiceReference1.KokoServiceClient();
+            result.PushPost(query);
+
+            Page_Load(sender, e);
         }
 
         private UserProfile makeProfile(string id) {
@@ -34,7 +60,7 @@ namespace KokoTalk
             String query = "SELECT * FROM [dbo].[Profile] WHERE profile_id='" + id + "';";
 
             //Connecting to the DB
-            SqlConnection connection = ConnectionSQL.connectDB("DASUAREZ");
+            SqlConnection connection = ConnectionSQL.connectDB(Environment.MachineName + "\\SQLEXPRESS");
 
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader reader = command.ExecuteReader();
@@ -56,7 +82,6 @@ namespace KokoTalk
             }
 
             connection.Close();
-
 
             return profile;
         }

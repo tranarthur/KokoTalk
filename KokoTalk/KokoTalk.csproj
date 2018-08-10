@@ -68,6 +68,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Content Include="Connected Services\ServiceReference1\KokoTalk.ServiceReference1.Post.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\Service1.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+>>>>>>> dc1c3c9c3d525cb5bdb6812cd056366551b545e6
     <Content Include="chat.html" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
@@ -94,12 +107,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs" />
+<<<<<<< HEAD
     <Compile Include="Connected Services\ServiceReference1\Reference1.cs">
+=======
+    <Compile Include="Connected Services\ServiceReference1\Reference1.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference2.cs">
+>>>>>>> dc1c3c9c3d525cb5bdb6812cd056366551b545e6
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ConnectionClass.cs" />
+=======
+>>>>>>> dc1c3c9c3d525cb5bdb6812cd056366551b545e6
     <Compile Include="ConnectionSQL.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
@@ -135,6 +156,12 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="UserProfile.cs" />
+  </ItemGroup>
+  <ItemGroup>
+>>>>>>> dc1c3c9c3d525cb5bdb6812cd056366551b545e6
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,7 +169,6 @@
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connected Services\ServiceReference1\KokoTalk.ServiceReference1.Post.datasource" />
