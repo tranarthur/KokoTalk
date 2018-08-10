@@ -18,6 +18,6 @@ namespace KokoTalk
         public string company { set; get; }
         public string school { set; get; }
         public string profile_pic { set; get; }
-        public string profile_status { set; get; };
+        public string profile_status { set; get; }
     }
 }

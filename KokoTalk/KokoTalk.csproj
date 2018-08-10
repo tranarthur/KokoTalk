@@ -69,6 +69,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="chat.html" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference2.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.disco" />
     <Content Include="Contacts.aspx" />
     <Content Include="css\chat.css" />
     <Content Include="css\contact.css" />
@@ -81,10 +88,19 @@
     <Content Include="images\profile\henrique-profile-pic.jpg" />
     <Content Include="images\profile\richard-profile-pic.jpg" />
     <Content Include="Profile.aspx" />
+    <Content Include="Signup.aspx" />
     <Content Include="Web.config" />
     <Content Include="Chat.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference1.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionClass.cs" />
     <Compile Include="ConnectionSQL.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
@@ -104,6 +120,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Message.cs" />
+    <Compile Include="Post.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,8 +136,27 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\ServiceReference1\KokoTalk.ServiceReference1.Post.datasource" />
+    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
