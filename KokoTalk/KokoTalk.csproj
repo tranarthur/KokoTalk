@@ -68,9 +68,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="chat.html" />
     <Content Include="Contacts.aspx" />
+    <Content Include="css\chat.css" />
+    <Content Include="css\contact.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\profile\arthur-profile-pic.jpeg" />
+    <Content Include="images\profile\default-profile-pic.png" />
+    <Content Include="images\profile\dennis-profile-pic.jpg" />
+    <Content Include="images\profile\henrique-profile-pic.jpg" />
+    <Content Include="images\profile\richard-profile-pic.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Chat.aspx" />
@@ -120,10 +128,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="css\" />
-    <Folder Include="images\profile\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

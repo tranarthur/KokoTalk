@@ -12,11 +12,11 @@ namespace KokoTalk
     public partial class Chat : System.Web.UI.Page
     {
         string sessionp = "Henrique";//HttpContext.Current.Session["currentUser"].ToString();
-          string chatp = "Dennis";// HttpContext.Current.Session["chatUser"].ToString();
+        string chatp = "Dennis";// HttpContext.Current.Session["chatUser"].ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "<div class='name'>" + chatp + "</div>" ;
-           // Label1.Text = "<div class='name'> Dennis </div>";
+            Label1.Text = "<div class='name'>" + chatp + "</div>";
+            // Label1.Text = "<div class='name'> Dennis </div>";
 
         }
 
@@ -29,63 +29,54 @@ namespace KokoTalk
             string queryString;
             string pass = "";
             try
-             {
-            
+            {
 
-
-                
-             
-                 
-                  connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
-                    conn = new SqlConnection(connectionString);
+                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
+                conn = new SqlConnection(connectionString);
                 conn.Open();
-                 queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp +"','"+ chatp +"','"+ TextBox1.Text+ "')" ;
-                 com = new SqlCommand(queryString, conn);
-
-                 com.ExecuteNonQuery();
-
-
-
-             }
-             catch ( SqlException ex)
-             {
-                 Response.Write(ex.Message);
-             }
-             finally {
-                 if (conn != null) conn.Close();
-                TextBox1.Text = "";
-             }
-            
-         }
-
-        
-
-/*
-           
-try{
-string chatter = HttpContext.Current.Session["chatUser"].ToString();
-string queryString;
-string id = "";
-Message[] inbox = new Message[15];
-
-
-conn.Open();
-queryString = "UPDATE "+ receiver +"Friends SET (read=FALSE)";
-com = new SqlCommand(queryString, conn);
-
-com.ExecuteNonQuery();
-
-
-                } catch (SqlException ex)
+                queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + chatp + "','" + TextBox1.Text + "', 1)";
+                com = new SqlCommand(queryString, conn);            
+                com.ExecuteNonQuery();
+      
+            }
+            catch (SqlException ex)
             {
                 Response.Write(ex.Message);
             }
-            finally {
-               if (conn != null) conn.Close();
-          
+            finally
+            {
+                if (conn != null) conn.Close();
+                TextBox1.Text = "";
+            }
+
         }
 
-            */
+        /*
+
+        try{
+        string chatter = HttpContext.Current.Session["chatUser"].ToString();
+        string queryString;
+        string id = "";
+        Message[] inbox = new Message[15];
+
+
+        conn.Open();
+        queryString = "UPDATE "+ receiver +"Friends SET (read=FALSE)";
+        com = new SqlCommand(queryString, conn);
+
+        com.ExecuteNonQuery();
+
+
+                        } catch (SqlException ex)
+                    {
+                        Response.Write(ex.Message);
+                    }
+                    finally {
+                       if (conn != null) conn.Close();
+
+                }
+
+                    */
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             Message[] inbox = new Message[15];
@@ -97,80 +88,58 @@ com.ExecuteNonQuery();
             try
             {
 
-
-                
-
-                
-
                 connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
                 conn = new SqlConnection(connectionString);
                 conn.Open();
-                    queryString = "SELECT * FROM Messages WHERE  (sender_id = '" + sessionp+ "' AND receriver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ORDER BY Time ASC";
-                    com = new SqlCommand(queryString, conn);
-                    SqlDataReader dr = com.ExecuteReader();
-                   
-                    while (dr.Read() && x < 15)
-                    {
+                queryString = "SELECT * FROM Messages WHERE  (sender_id = '" + sessionp + "' AND receriver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ORDER BY Time DESC";
+                com = new SqlCommand(queryString, conn);
+                SqlDataReader dr = com.ExecuteReader();
+
+                while (dr.Read() && x <= 7)
+                {
                     Message mes = new Message();
                     mes.sender = dr["sender_id"].ToString();
-                    mes.receiver= dr["receriver_id"].ToString();
+                    mes.receiver = dr["receriver_id"].ToString();
                     mes.time = dr["Time"].ToString();
                     mes.message = dr["Text"].ToString();
                     inbox[x] = mes;
                     x++;
-                    }
-                   
+                }
 
             }
             catch (SqlException ex)
             {
                 Response.Write(ex.Message);
             }
-            finally {
-               if (conn != null) conn.Close();
+            finally
+            {
+                if (conn != null) conn.Close();
             }
 
+            conn.Open();
+            queryString = "UPDATE Messages SET (newmessage=0) WHERE  WHERE  (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ";
+            com = new SqlCommand(queryString, conn);
 
+            com.ExecuteNonQuery();
 
-
-            /*
-       try{
-      string session = HttpContext.Current.Session["currentUser"].ToString();
-      string chatter = HttpContext.Current.Session["chatUser"].ToString();
-      string queryString;
-      string id = "";
-      Message[] inbox = new Message[15];
-      conn = ConectionFactory();
-
-      conn.Open();
-      queryString = "UPDATE "+ session +"Friends SET (read=TRUE)";
-      com = new SqlCommand(queryString, conn);
-
-      com.ExecuteNonQuery();
-      */
-       
-          
-
-           
-
-                Literal1.Text = "";
-            for (int i = 0; i < x; i++)
+            Literal1.Text = "";
+            for (int i = 7; i >= 0; i--)
             {
                 //this is testing code!!! Remove after!
                 //iteral1.Text += "<div class='speech-bubble'> <div class='message'> Hey bro, how are you?</div><div class='time'>" + DateTime.Now + "</div></div>";
                 //Literal1.Text += "<div class='speech-bubble2'>  <div class='message'> What???</div><div class='time'>" + DateTime.Now + "</div></div>";
                 //Testing code ends here
-                
+
                 if (inbox[i].sender.Equals(sessionp))
                 {
-                    Literal1.Text += "<div class='speech-bubble'> <div class='message'> "+ inbox[i].message +"</div><div class='time'>"+ inbox[i].time+"</div></div>";
+                    Literal1.Text += "<div class='speech'><div class='speech-bubble2'> <div class='message'> " + inbox[i].message + "</div><div class='time'>" + inbox[i].time + "</div></div></div>";
                 }
                 else
                 {
-                    Literal1.Text += "<div class='speech-bubble2'> <div class='name>" + inbox[i].sender + "</div> <div class='message'> "+ inbox[i].message +"</div><div class='time'>"+ inbox[i].time+"</div></div>";
+                    Literal1.Text += "<div class='speech'><div class='speech-bubble'> <div class='name>" + inbox[i].sender + "</div> <div class='message'> " + inbox[i].message + "</div><div class='time'>" + inbox[i].time + "</div></div></div>";
                 }
-           
-       
+
+
             }
 
         }
