@@ -1,0 +1,67 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700');
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -webkit-linear-gradient(bottom left, #a6c0fe, #f68084);
+    background: linear-gradient(to bottom right, #a6c0fe, #f68084);
+}
+
+#nav {
+    overflow: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#app-title {
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#noaccount {
+    color: white;
+    float: right;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+#main {
+    margin: auto;
+    width: 50%;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#content {
+    padding: 30px;
+    background-color: white;
+}
+
+td {
+    padding: 10px;
+}
+
+#login {
+    margin: 0 auto;
+}
+
+#loginTxtBox,
+#passwordTxtBox {
+    border: 1px solid rgba(0, 0, 0, .20);
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#submit {
+    font-size: 20px;
+    border: none;
+}

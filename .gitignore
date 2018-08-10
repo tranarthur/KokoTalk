@@ -3,9 +3,12 @@
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
+<<<<<<< HEAD
+=======
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
 .vs/config/applicationhost.config
+<<<<<<< HEAD
 KokoTalk/obj/Debug/KokoTalk.pdb
 KokoTalk/obj/Debug/KokoTalk.dll
 KokoTalk/obj/Debug/KokoTalk.csprojResolveAssemblyReference.cache
@@ -16,7 +19,24 @@ KokoTalk/KokoTalk.csproj
 .vs/config/applicationhost.config
 .vs/KokoTalk/v15/.suo
 .vs/KokoTalk/v15/Server/sqlite3/storage.ide
+=======
+>>>>>>> 5eb92c6d808f4614e8fff91a0418ab972d12ced3
+KokoTalk/obj/Debug/KokoTalk.csproj.FileListAbsolute.txt
+.vs/config/applicationhost.config
+.vs/config/applicationhost.config
+.vs/KokoTalk/DesignTimeBuild/.dtbcache
+.vs/KokoTalk/v15/.suo
+>>>>>>> 728f99f48869fe5db3e954e64ee673a18d709431
 .vs/KokoTalk/v15/Server/sqlite3/storage.ide-shm
 .vs/KokoTalk/v15/Server/sqlite3/storage.ide-wal
 KokoTalk/bin/KokoTalk.dll
 KokoTalk/bin/KokoTalk.pdb
+<<<<<<< HEAD
+=======
+KokoTalk/obj/Debug/KokoTalk.csproj.CoreCompileInputs.cache
+KokoTalk/obj/Debug/KokoTalk.csprojAssemblyReference.cache
+KokoTalk/obj/Debug/KokoTalk.dll
+KokoTalk/obj/Debug/KokoTalk.pdb
+WCFKokoTalks/obj/Debug/WCFKokoTalks.csproj.CoreCompileInputs.cache
+WCFKokoTalks/obj/Debug/WCFKokoTalks.csproj.CoreCompileInputs.cache
+>>>>>>> 728f99f48869fe5db3e954e64ee673a18d709431

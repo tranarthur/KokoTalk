@@ -72,6 +72,7 @@
     <Content Include="Contacts.aspx" />
     <Content Include="css\chat.css" />
     <Content Include="css\contact.css" />
+    <Content Include="css\login.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\profile\arthur-profile-pic.jpeg" />
@@ -85,7 +86,11 @@
     <Content Include="Chat.aspx" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="ConnectionClass.cs" />
+=======
+    <Compile Include="ConnectionSQL.cs" />
+>>>>>>> 728f99f48869fe5db3e954e64ee673a18d709431
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +124,7 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +132,9 @@
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
+=======
+    <Compile Include="UserProfile.cs" />
+>>>>>>> 728f99f48869fe5db3e954e64ee673a18d709431
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

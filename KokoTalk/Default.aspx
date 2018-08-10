@@ -4,16 +4,37 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>KokoTalk Login</title>
+    <link rel="stylesheet" href="css/login.css"/>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Login ID="Login1" runat="server">
-            </asp:Login>
-            <br />
-            <asp:HyperLink ID="HyperLink1" runat="server">Register</asp:HyperLink>
+
+        <div id="main">
+            <div id="nav">
+                <span id="app-title">KokoTalk</span>
+                <span id="noaccount">No Account?</span>
+            </div>
+            <div id="content">
+                <table id="login">
+                    <tr>
+                        <td>
+                            <asp:TextBox ID="loginTxtBox" runat="server" placeholder="Email"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:TextBox id="passwordTxtBox" runat="server" TextMode="Password" placeholder="Password"></asp:TextBox></td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                        <asp:Button id="submit" runat="server" Text="Continue" OnClick="submit_Click" />
+
+                    </tr>
+                </table>
+            </div>
         </div>
     </form>
+    
 </body>
 </html>
