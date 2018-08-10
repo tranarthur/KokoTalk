@@ -29,9 +29,9 @@ namespace KokoTalk
                 connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
                 conn = new SqlConnection(connectionString);
                 conn.Open();
-                queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + "','" + "', 1)";
-                com = new SqlCommand(queryString, conn);
-                com.ExecuteNonQuery();
+              //  queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + "','" + "', 1)";
+                //com = new SqlCommand(queryString, conn);
+                //com.ExecuteNonQuery();
 
             }
             catch (SqlException ex)

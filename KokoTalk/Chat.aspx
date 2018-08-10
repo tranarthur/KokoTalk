@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <link href="chat.css" rel="stylesheet" />
+    <link href="css/chat.css" rel="stylesheet" />
     <title>Conversation with <!--Put Name Here--></title>
 </head>
 <body>
@@ -21,9 +21,14 @@
             </asp:UpdatePanel>
             <div id="input">
                         <asp:TextBox ID="TextBox1" runat="server" Width="30%"></asp:TextBox>
+                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
                         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Send" />
+                        </ContentTemplate>              
+            </asp:UpdatePanel>
                     </div>
         </div>
     </form>
 </body>
 </html>
+

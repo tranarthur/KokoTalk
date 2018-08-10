@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * Author Henrique
+ * 
+ * */
+
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
@@ -11,33 +17,31 @@ namespace KokoTalk
 {
     public partial class Chat : System.Web.UI.Page
     {
-        string sessionp = "Henrique";//HttpContext.Current.Session["currentUser"].ToString();
-        string chatp = "Dennis";// HttpContext.Current.Session["chatUser"].ToString();
+        //Getting user sessions form the previous page
+        string sessionp = "1";//HttpContext.Current.Session["currentUser"].ToString();
+        string chatp = "2";// HttpContext.Current.Session["chatUser"].ToString();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "<div class='name'>" + chatp + "</div>";
-            // Label1.Text = "<div class='name'> Dennis </div>";
 
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Message[] inbox = new Message[15];
+            // This connection is to retrieve the name of the person you are chatting with
             string connectionString = null;
             SqlConnection conn = null;
             SqlCommand com;
             string queryString;
-            string pass = "";
+
             try
             {
 
-                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
+                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalkDB; Integrated Security=SSPI; Persist Security Info=false";
                 conn = new SqlConnection(connectionString);
                 conn.Open();
-                queryString = "INSERT INTO Messages VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + chatp + "','" + TextBox1.Text + "', 1)";
-                com = new SqlCommand(queryString, conn);            
-                com.ExecuteNonQuery();
-      
+                queryString = "SELECT * FROM Profile WHERE profile_id ='" + chatp + "  '";
+                com = new SqlCommand(queryString, conn);
+                SqlDataReader dr = com.ExecuteReader();
+                dr.Read();
+                Label1.Text = dr["fullname"].ToString();
+                Page.Title = "Chat with " + dr["fullname"].ToString(); ;
             }
             catch (SqlException ex)
             {
@@ -46,40 +50,71 @@ namespace KokoTalk
             finally
             {
                 if (conn != null) conn.Close();
-                TextBox1.Text = "";
             }
 
         }
+        //When the button is clicked the message is sent to the message table on the database and the new message field is updated on the Firends list
+        protected void Button1_Click(object sender, EventArgs e)
+        {
 
-        /*
+            string connectionString = null;
+            SqlConnection conn = null;
+            SqlCommand com;
+            string queryString;
+            try
+            {
 
-        try{
-        string chatter = HttpContext.Current.Session["chatUser"].ToString();
-        string queryString;
-        string id = "";
-        Message[] inbox = new Message[15];
+                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalkDB; Integrated Security=SSPI; Persist Security Info=false";
+                conn = new SqlConnection(connectionString);
+                conn.Open();
+                queryString = "INSERT INTO Messages(time,sender_id,receiver_id,text) VALUES(CURRENT_TIMESTAMP,'" + sessionp + "','" + chatp + "',@Text)";
+                com = new SqlCommand(queryString, conn);
+                com.Parameters.AddWithValue("@Text", TextBox1.Text);
+                com.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
+
+            }
+            TextBox1.Text = "";
 
 
-        conn.Open();
-        queryString = "UPDATE "+ receiver +"Friends SET (read=FALSE)";
-        com = new SqlCommand(queryString, conn);
 
-        com.ExecuteNonQuery();
+            //Updating the new message value on the Friends table
+            try
+            {
+
+                conn.Open();
+                queryString = "UPDATE Friends SET NewMessage=1 WHERE (profile_id = '" + chatp + "' AND friend_id = '" + sessionp + "') ";
+                com = new SqlCommand(queryString, conn);
+
+                com.ExecuteNonQuery();
 
 
-                        } catch (SqlException ex)
-                    {
-                        Response.Write(ex.Message);
-                    }
-                    finally {
-                       if (conn != null) conn.Close();
+            }
+            catch (SqlException ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
 
-                }
+            }
 
-                    */
+        }
+        // Timer ensures that messages are retrieved on a timely manner
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            Message[] inbox = new Message[15];
+
+            //Getting messages from database, selecting by the relevant users.
+            ArrayList inbox = new ArrayList();
             string connectionString = null;
             SqlConnection conn = null;
             SqlCommand com;
@@ -88,21 +123,21 @@ namespace KokoTalk
             try
             {
 
-                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalksDB; Integrated Security=SSPI; Persist Security Info=false";
+                connectionString = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=KokoTalkDB; Integrated Security=SSPI; Persist Security Info=false";
                 conn = new SqlConnection(connectionString);
                 conn.Open();
-                queryString = "SELECT * FROM Messages WHERE  (sender_id = '" + sessionp + "' AND receriver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ORDER BY Time DESC";
+                queryString = "SELECT * FROM Messages WHERE (sender_id = '" + sessionp + "' AND receiver_id = '" + chatp + "') OR (sender_id = '" + chatp + "' AND receiver_id = '" + sessionp + "') ORDER BY Time DESC";
                 com = new SqlCommand(queryString, conn);
                 SqlDataReader dr = com.ExecuteReader();
-
-                while (dr.Read() && x <= 7)
+                //Creating message objects to hold values and inputing them in to an arraylist (necessary to be flexible with the number of messages)
+                while (dr.Read() && x <= 50)
                 {
                     Message mes = new Message();
                     mes.sender = dr["sender_id"].ToString();
-                    mes.receiver = dr["receriver_id"].ToString();
+                    mes.receiver = dr["receiver_id"].ToString();
                     mes.time = dr["Time"].ToString();
                     mes.message = dr["Text"].ToString();
-                    inbox[x] = mes;
+                    inbox.Add(mes);
                     x++;
                 }
 
@@ -115,30 +150,46 @@ namespace KokoTalk
             {
                 if (conn != null) conn.Close();
             }
-
-            conn.Open();
-            queryString = "UPDATE Messages SET (newmessage=0) WHERE  WHERE  (sender_id = '" + chatp + "' AND receriver_id = '" + sessionp + "') ";
-            com = new SqlCommand(queryString, conn);
-
-            com.ExecuteNonQuery();
-
+            //Literal is used to display messages, the message class creates the div so the page can be updated with messages accordingly
             Literal1.Text = "";
-            for (int i = 7; i >= 0; i--)
+            for (int i = x - 1; i >= 0; i--)
             {
                 //this is testing code!!! Remove after!
                 //iteral1.Text += "<div class='speech-bubble'> <div class='message'> Hey bro, how are you?</div><div class='time'>" + DateTime.Now + "</div></div>";
                 //Literal1.Text += "<div class='speech-bubble2'>  <div class='message'> What???</div><div class='time'>" + DateTime.Now + "</div></div>";
                 //Testing code ends here
-
-                if (inbox[i].sender.Equals(sessionp))
+                Message mes = (Message)inbox[i];
+                if (mes.sender.Equals(sessionp))
                 {
-                    Literal1.Text += "<div class='speech'><div class='speech-bubble2'> <div class='message'> " + inbox[i].message + "</div><div class='time'>" + inbox[i].time + "</div></div></div>";
+                    Literal1.Text += mes.PostSender();
                 }
                 else
                 {
-                    Literal1.Text += "<div class='speech'><div class='speech-bubble'> <div class='name>" + inbox[i].sender + "</div> <div class='message'> " + inbox[i].message + "</div><div class='time'>" + inbox[i].time + "</div></div></div>";
+                    Literal1.Text += mes.PostReceiver();
                 }
 
+
+            }
+
+            //Updating new message fields
+            try
+            {
+
+                conn.Open();
+                queryString = "UPDATE Friends SET NewMessage=0 WHERE (profile_id = '" + sessionp + "' AND friend_id = '" + chatp + "') ";
+                com = new SqlCommand(queryString, conn);
+
+                com.ExecuteNonQuery();
+
+
+            }
+            catch (SqlException ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                if (conn != null) conn.Close();
 
             }
 
@@ -147,4 +198,3 @@ namespace KokoTalk
 
 
 }
-
