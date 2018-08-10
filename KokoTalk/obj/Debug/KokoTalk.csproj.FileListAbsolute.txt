@@ -113,3 +113,4 @@ C:\Users\Dennis\Documents\GitHub\KokoTalk\KokoTalk\obj\Debug\KokoTalk.csproj.Cor
 C:\Users\Dennis\Documents\GitHub\KokoTalk\KokoTalk\obj\Debug\KokoTalk.csproj.CopyComplete
 C:\Users\Dennis\Documents\GitHub\KokoTalk\KokoTalk\obj\Debug\KokoTalk.dll
 C:\Users\Dennis\Documents\GitHub\KokoTalk\KokoTalk\obj\Debug\KokoTalk.pdb
+C:\Users\Dennis\Documents\GitHub\KokoTalk\KokoTalk\obj\Debug\KokoTalk.csprojAssemblyReference.cache

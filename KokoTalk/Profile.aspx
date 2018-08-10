@@ -9,17 +9,23 @@
 <body>
     <form id="form1" runat="server" style="height: 100%; width: 100%">
         <div style="background-color: black; padding: 15px; color: white">
-            <strong>KokoTalk - Name <spam style="float: right">Log Out</spam></strong>
+            &nbsp;<strong>KokoTalk -
+            <asp:Label ID="name1" runat="server" Text="Label"></asp:Label>
+&nbsp;<spam style="float: right">Log Out</spam></strong>
         </div>
         <div style="background-color: cornflowerblue; padding: 10px; color: white">
-            <spam><strong><center>Name</center></strong></spam>
+            <spam><strong><center>
+                <asp:Label ID="name2" runat="server" Text="Name"></asp:Label>
+            </center></strong></spam>
         </div>
         <div id="profile" style="background-color: #e6ecff; padding: 10px;">
             <div id="main_profile" style="background-color:white; padding: 10px;">
                 <div style="width: 50%; border-radius: 35%"><img src="..."></div>
                 <div style="width: 65%">
                     <ul>
-                        <li>Name, Age</li>
+                        <li>
+                            <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+                        </li>
                         <li>Status</li>
                         <li>Job</li>
                         <li>Location</li>
@@ -29,18 +35,13 @@
                 </div>
             </div>
             <br>
-            <asp:TextBox ID="TextBox1" runat="server" style="width: 100%; padding: 10px"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" style="width: 90%; padding: 10px"></asp:TextBox>
             <br>
-            <asp:Button ID="Button1" runat="server" Text="Button" style="float: right; background-color: cornflowerblue; color: white" />
+            <asp:Button ID="Button1" runat="server" Text="Post" style="float: right; background-color: cornflowerblue; color: white" OnClick="Button1_Click" />
             <br>
             <br>
-            <div id="posts">
-                <div style="background-color:white; padding: 10px;">
-                    Hello Dennis! What's going on!
-                    <p style="float: right">Time, date</p>
-                    <br><br>
-                </div>
-            </div>
+
+            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
         </div>
     </form>
 </body>
