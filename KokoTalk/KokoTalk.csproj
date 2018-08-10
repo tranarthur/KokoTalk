@@ -72,16 +72,8 @@
   <ItemGroup>
     <Content Include="chat.html" />
     <Content Include="Contacts.aspx" />
-    <Content Include="css\chat.css" />
-    <Content Include="css\contact.css" />
-    <Content Include="css\login.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="images\profile\arthur-profile-pic.jpeg" />
-    <Content Include="images\profile\default-profile-pic.png" />
-    <Content Include="images\profile\dennis-profile-pic.jpg" />
-    <Content Include="images\profile\henrique-profile-pic.jpg" />
-    <Content Include="images\profile\richard-profile-pic.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Chat.aspx" />
@@ -110,7 +102,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Message.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
