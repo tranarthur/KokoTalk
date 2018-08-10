@@ -9,7 +9,7 @@ namespace WCFKokoTalks
     {
 
         [OperationContract]
-        Post[] GetPost(int profiletId);
+        Post[] GetPost(string profileId);
 
         [OperationContract]
         void PushPost(string query);

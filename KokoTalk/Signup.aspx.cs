@@ -19,7 +19,7 @@ namespace KokoTalk
         {
             string connectionString = Environment.MachineName;
             string agestr = txtAge.Text;
-            SqlConnection conn = ConnectionSQL.connectDB(connectionString);
+            SqlConnection conn = ConnectionSQL.connectDB(connectionString + "\\SQLEXPRESS");
             SqlCommand com;
             string queryString = "INSERT INTO Profile(sex, email, password,city, province, age, fullname) VALUES(@gender, @email,@password,@city,@prov, @age,@name)";
             com = new SqlCommand(queryString, conn);

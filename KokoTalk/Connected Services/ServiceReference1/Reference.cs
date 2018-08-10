@@ -133,5 +133,10 @@ namespace KokoTalk.ServiceReference1 {
         public System.Threading.Tasks.Task PushPostAsync(string query) {
             return base.Channel.PushPostAsync(query);
         }
+
+        internal KokoTalk.Post[] GetPost(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

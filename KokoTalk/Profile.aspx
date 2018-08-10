@@ -20,22 +20,31 @@
         </div>
         <div id="profile" style="background-color: #e6ecff; padding: 10px;">
             <div id="main_profile" style="background-color:white; padding: 10px;">
-                <div style="width: 50%; border-radius: 35%"><img src="..."></div>
+                <div style="width: 50%; border-radius: 35%"><img id="image" src="..." /></div>
                 <div style="width: 65%">
                     <ul>
-                        <li>
-                            <asp:Label ID="name" runat="server" Text="Label"></asp:Label>
+                        <li><b><asp:Label ID="name" runat="server" Text="Full Name"></asp:Label></b>, 
+                        <asp:Label ID="age" runat="server" Text="Age"></asp:Label> <b> &nbsp;<asp:Label ID="sex" runat="server" Text="Sex"></asp:Label></b> 
                         </li>
-                        <li>Status</li>
-                        <li>Job</li>
-                        <li>Location</li>
-                        <li>School</li>
-                        <li>Background</li>
+                        <li><asp:Label ID="status" runat="server" Text="Status"></asp:Label>
+                        </li>
+                        <li><asp:Label ID="email" runat="server" Text="Email Address"></asp:Label>
+                        </li>
+                        <li><asp:Label ID="job" runat="server" Text="Jod Title"></asp:Label>
+                        </li>
+                        <li><b>Works</b> at <asp:Label ID="work" runat="server" Text="Company Name"></asp:Label>
+                        </li>
+                        <li>Lives in <asp:Label ID="city" runat="server" Text="City"></asp:Label> <asp:Label ID="province" runat="server" Text="Province"></asp:Label>
+                        </li>
+                        <li>Studied at <asp:Label ID="school" runat="server" Text="School"></asp:Label>
+                        </li>
+                        <li><b>Friends # </b><asp:Label ID="friends" runat="server" Text="0"></asp:Label>
+                        </li>
                     </ul>
                 </div>
             </div>
             <br>
-            <asp:TextBox ID="TextBox1" runat="server" style="width: 90%; padding: 10px"></asp:TextBox>
+            <asp:TextBox ID="post" runat="server" style="width: 90%; padding: 10px"></asp:TextBox>
             <br>
             <asp:Button ID="Button1" runat="server" Text="Post" style="float: right; background-color: cornflowerblue; color: white" OnClick="Button1_Click" />
             <br>

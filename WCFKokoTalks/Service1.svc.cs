@@ -9,12 +9,12 @@ namespace WCFKokoTalks
     public class Service1 : KokoService
     {
 
-        public Post[] GetPost(int profiletId)
+        public Post[] GetPost(string profileId)
         {
             Post[] posts = new Post[25];
             int counter = 0;
 
-            String query = "SELECT * FROM [dbo].[Posts] WHERE profile_id='" + profiletId + "'" +
+            String query = "SELECT * FROM [dbo].[Posts] WHERE profile_id='" + profileId + "'" +
                 "ORDER BY postdate DESC;";
 
             //Connecting to the DB

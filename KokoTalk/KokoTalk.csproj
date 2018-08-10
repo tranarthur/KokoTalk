@@ -104,7 +104,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ConnectionClass.cs" />
     <Compile Include="ConnectionSQL.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
@@ -150,7 +149,6 @@
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserProfile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connected Services\ServiceReference1\KokoTalk.ServiceReference1.Post.datasource" />
