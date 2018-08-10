@@ -85,6 +85,7 @@
     <Content Include="Chat.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionSQL.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
