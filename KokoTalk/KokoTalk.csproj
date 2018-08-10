@@ -45,8 +45,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,51 +68,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="Connected Services\ServiceReference1\KokoTalk.ServiceReference1.Post.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ServiceReference1\Service1.disco" />
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-=======
     <Content Include="chat.html" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference2.cs</LastGenOutput>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
     </None>
     <None Include="Connected Services\ServiceReference1\Service1.disco" />
->>>>>>> 2fc7417ae229a4c93c566c39040dbb70fdcdb7ab
     <Content Include="Contacts.aspx" />
+    <Content Include="css\chat.css" />
+    <Content Include="css\contact.css" />
+    <Content Include="css\login.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\profile\arthur-profile-pic.jpeg" />
+    <Content Include="images\profile\default-profile-pic.png" />
+    <Content Include="images\profile\dennis-profile-pic.jpg" />
+    <Content Include="images\profile\henrique-profile-pic.jpg" />
+    <Content Include="images\profile\richard-profile-pic.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="Web.config" />
     <Content Include="Chat.aspx" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-=======
     <Compile Include="Connected Services\ServiceReference1\Reference.cs" />
-    <Compile Include="Connected Services\ServiceReference1\Reference1.cs" />
-    <Compile Include="Connected Services\ServiceReference1\Reference2.cs">
->>>>>>> 2fc7417ae229a4c93c566c39040dbb70fdcdb7ab
+    <Compile Include="Connected Services\ServiceReference1\Reference1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="ConnectionClass.cs" />
->>>>>>> 2fc7417ae229a4c93c566c39040dbb70fdcdb7ab
     <Compile Include="ConnectionSQL.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
@@ -133,10 +118,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Message.cs" />
->>>>>>> 2fc7417ae229a4c93c566c39040dbb70fdcdb7ab
     <Compile Include="Post.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
@@ -153,11 +135,6 @@
     <Compile Include="Chat.aspx.designer.cs">
       <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="UserProfile.cs" />
-  </ItemGroup>
-  <ItemGroup>
-=======
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Connected Services\ServiceReference1\KokoTalk.ServiceReference1.Post.datasource" />
->>>>>>> 2fc7417ae229a4c93c566c39040dbb70fdcdb7ab
     <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
     <None Include="Connected Services\ServiceReference1\Service1.xsd">
       <SubType>Designer</SubType>
@@ -188,16 +164,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="css\" />
-    <Folder Include="images\profile\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
