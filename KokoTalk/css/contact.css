@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700');
 
 body {
@@ -23,16 +22,20 @@ body {
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
 }
 
+    #nav a {
+        color: white;
+    }
+
 #app-title {
     font-size: 32px;
     font-family: 'Montserrat', sans-serif;
     color: white;
 }
 
-#app-title::after {
+    #app-title::after {
         content: " - ";
         font-size: 20px;
-}
+    }
 
 #logout {
     padding-top: 10px;
@@ -41,6 +44,14 @@ body {
     font-size: 20px;
 }
 
+.read .fa-check:before {
+    color: #1E88EA;
+}
+
+.message-status {
+    float: right;
+}
+
 #current-user {
     color: white;
     font-size: 20px;
@@ -53,15 +64,15 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#contacts {
+.contacts {
     overflow-y: auto;
     max-height: 75vh;
-    background-color:white;
+    background-color: white;
 }
 
 .contact {
     padding: 5px;
-    max-height:126px;
+    max-height: 126px;
     border-top: 2px solid #E6E6E6;
     overflow: auto;
     display: -webkit-box;
@@ -70,19 +81,25 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    overflow:hidden;
+    overflow: hidden;
+    background-color: white;
 }
+
+    .contact a {
+        color: black;
+    }
 
 .contact-pic {
     display: inline-block;
     float: left;
     margin: 5px;
-    max-height:100px;
+    max-height: 100px;
 }
 
     .contact-pic > img {
         border-radius: 50%;
         height: 100px;
+        width: 100px;
         -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     }
@@ -90,7 +107,7 @@ body {
 .contact-info {
     width: 100%;
     margin: 10px;
-    max-height:106px;
+    max-height: 106px;
 }
 
 .contact-upper {
@@ -119,7 +136,7 @@ body {
     box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
 }
 
-#new-contact-txtbox {
+#new_contact_txtbox {
     border: none;
     width: 80%;
     outline: none;
@@ -127,7 +144,7 @@ body {
     background-color: #E8E8E8;
 }
 
-#add-contact-btn {
+#add_contact_btn {
     border: none;
     float: right;
     font-size: 20px;
@@ -138,10 +155,9 @@ body {
 .unread {
     font-weight: 500;
 }
-
-    .unread .last-message-time {
+.unread .last-message-time {
         color: #1E88EA;
-    }
+}
 
 /* SCROLL BAR */
 
@@ -168,173 +184,7 @@ body {
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
-=======
-﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700');
 
-body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background: -webkit-linear-gradient(bottom left, #a6c0fe, #f68084);
-    background: linear-gradient(to bottom right, #a6c0fe, #f68084);
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
 }
-
-#nav {
-    overflow: auto;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.85);
-    -webkit-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
-    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
-}
-
-#app-title {
-    font-size: 32px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-}
-
-#app-title::after {
-        content: " - ";
-        font-size: 20px;
-}
-
-#logout {
-    color: white;
-    float: right;
-    font-size: 20px;
-}
-
-#current-user {
-    color: white;
-    font-size: 20px;
-}
-
-#main {
-    margin: auto;
-    width: 50%;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#contacts {
-    overflow-y: auto;
-    max-height: 75vh;
-    background-color:white;
-}
-
-.contact {
-    padding: 5px;
-    max-height:126px;
-    border-top: 2px solid #E6E6E6;
-    overflow: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    overflow:hidden;
-}
-
-.contact-pic {
-    display: inline-block;
-    float: left;
-    margin: 5px;
-    max-height:100px;
-}
-
-    .contact-pic > img {
-        border-radius: 50%;
-        height: 100px;
-        -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-    }
-
-.contact-info {
-    width: 100%;
-    margin: 10px;
-    max-height:106px;
-}
-
-.contact-upper {
-    margin-bottom: 5px;
-}
-
-.contact-lower {
-}
-
-.contact-name {
-}
-
-.last-message-time {
-    float: right;
-}
-
-.last-message {
-    max-width: 75%;
-}
-
-#new-contact {
-    padding: 20px;
-    font-size: 20px;
-    background-color: #E8E8E8;
-    -webkit-box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
-    box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
-}
-
-#new-contact-txtbox {
-    border: none;
-    width: 80%;
-    outline: none;
-    font-size: 20px;
-    background-color: #E8E8E8;
-}
-
-#add-contact-btn {
-    border: none;
-    float: right;
-    font-size: 20px;
-    outline: none;
-    background-color: #E8E8E8;
-}
-
-.unread {
-    font-weight: 500;
-}
-
-    .unread .last-message-time {
-        color: #1E88EA;
-    }
-
-/* SCROLL BAR */
-
-/* width */
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-    /* Handle on hover */
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-    }
->>>>>>> fafce8f04847846a1584446940360b6c19a4e855

@@ -1,32 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700');
 
-#header {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-    padding: 20px;
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -webkit-linear-gradient(bottom left, #a6c0fe, #f68084);
+    background: linear-gradient(to bottom right, #a6c0fe, #f68084);
+}
+
+#nav {
+    overflow: auto;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.85);
+    -webkit-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
+}
+
+    #nav a {
+        color: white;
+    }
+
+#app-title {
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+    #app-title::after {
+        content: " - ";
+        font-size: 20px;
+    }
+
+#logout, #contacts {
+    padding-top: 10px;
+    color: white;
+    float: right;
+    font-size: 20px;
+}
+
+#contacts {
+    padding-right: 10px;
+}
+
+#current-user {
+    color: white;
+    font-size: 20px;
+}
+
+#main {
+    margin: auto;
+    width: 50%;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .speech {
     clear: both;
     overflow: hidden;
     padding: 5px 30px;
-}
-
-#content {
-    display: inline-block;
-    width: 50%;
-    background-color: white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-    height: 100vh;
-    position: relative;
-}
-
-body {
-    background-color: gainsboro;
-    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
     line-height: 1.625;
     text-align: center;
+}
+
+#content {
+    position: relative;
+    background-color: white;
+    width: 100%;
+}
+
+#Label1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: 0;
+    background: white;
+    padding: 10px;
+    -webkit-box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .time {
@@ -63,35 +125,84 @@ body {
     max-width: 50%;
 }
 
-#input {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+.message {
+    word-wrap: break-word;
 }
 
-input[type="text"] {
+#input {
+    width: 100%;
+    background-color: #E8E8E8;
+    -webkit-box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
+    box-shadow: 0px -4px 8px 0 rgba(0, 0, 0, 0.10), 0px -6px 20px 0 rgba(0, 0, 0, 0.10);
+    display: inline-block;
+}
+
+#TextBox1 {
     border: none;
-    background-color: white;
-    padding: 20px 10px;
-    font-size: 20px;
     width: 80%;
     outline: none;
+    background-color: #E8E8E8;
+    resize: none;
+    font-size: 16px;
+    padding: 15px;
+    font-family: 'Roboto', sans-serif;
+   
+}
+
+#Button1 {
+    padding: 15px;
+    border: none;
+    float: right;
+    font-size: 20px;
+    outline: none;
+    background-color: #E8E8E8;
 }
 
 #UpdatePanel1 {
-    margin: 30px auto;
+    margin: 0 auto;
     overflow-y: auto;
-    max-height: 75vh;
+    max-height: 70vh;
+    padding-top: 35px;
+    padding-bottom: 10px;
 }
 
 #UpdatePanel2 {
     display: inline-block;
+    width: 100%;
 }
 
-#Button1 {
-    display: inline;
-    border: none;
-    font-size: 20px;
-    color: grey;
+
+
+/* SCROLL BAR */
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 0 !important
 }

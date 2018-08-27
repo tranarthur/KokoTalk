@@ -1,207 +1,193 @@
-<!DOCTYPE html>
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<style>
-		#header {
-			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-			padding: 20px;
-		}
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <style>
+        #header {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            padding: 20px;
+        }
 
-		.speech {
-			clear: both;
-			overflow: hidden;
-			padding: 5px 30px;
-		}
+        .speech {
+            clear: both;
+            overflow: hidden;
+            padding: 5px 30px;
+        }
 
-		#content {
+        #content {
+            display: inline-block;
+            width: 50%;
+            background-color: white;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            height: 100vh;
+            position: relative;
+        }
 
-			display: inline-block;
-			width: 50%;
-			background-color: white;
-			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-			height: 100vh;
-			position: relative;
+        body {
+            background-color: gainsboro;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.625;
+            text-align: center;
+            margin: 0;
+        }
 
-		}
+        .time {
+            font-style: italic;
+            font-size: 8px;
+        }
 
-		body {
-			background-color: gainsboro;
-			font-family: 'Roboto', sans-serif;
-			font-size: 16px;
-			font-weight: 300;
-			line-height: 1.625;
-			text-align: center;
-			margin: 0;
-		}
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
 
-		.time {
-			font-style: italic;
-			font-size: 8px;
-		}
+        .speech-bubble {
+            padding: 10px;
+            display: inline-block;
+            margin-top: 5px;
+            float: left;
+            text-align: left;
+            background: #E6E5EA;
+            border-radius: .5em;
+            max-width: 50%;
+        }
 
-		.name {
-			font-size: 20px;
-			font-weight: bold;
-			text-align: center;
-		}
+        .speech-bubble2 {
+            padding: 10px;
+            margin-top: 5px;
+            display: inline-block;
+            float: right;
+            text-align: right;
+            background: #157EFB;
+            border-radius: .5em;
+            color: white;
+            max-width: 50%;
+        }
 
-		.speech-bubble {
-			padding: 10px;
-			display: inline-block;
-			margin-top: 5px;
-			float: left;
-			text-align: left;
-			background: #E6E5EA;
-			border-radius: .5em;
-			max-width: 50%;
+        #input {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
 
-		}
+        input[type="text"] {
+            border: none;
+            background-color: white;
+            padding: 20px 10px;
+            font-size: 20px;
+            width: 80%;
+            outline: none;
+        }
 
-		.speech-bubble2 {
-			padding: 10px;
-			margin-top: 5px;
-			display: inline-block;
-			float: right;
-			text-align: right;
-			background: #157EFB;
-			border-radius: .5em;
-			color: white;
-			max-width: 50%;
+        #UpdatePanel1 {
+            margin: 30px auto;
+            overflow-y: auto;
+        }
 
-		}
+        #Button1 {
+            display: inline;
+            border: none;
+            font-size: 20px;
+            color: grey;
+        }
 
-		#input {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.0), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-
-
-
-		}
-
-		input[type="text"] {
-			border: none;
-			background-color: white;
-			padding: 20px 10px;
-			font-size: 20px;
-			width: 80%;
-			outline: none;
-
-		}
-
-		#UpdatePanel1 {
-			margin: 30px auto;
-			overflow-y: auto;
-		}
-
-		#Button1 {
-			display: inline;
-			border: none;
-			font-size: 20px;
-			color: grey;
-		}
-
-		#input-wrapper {}
-
-	</style>
-	<title>
-
-	</title>
+        #input-wrapper {
+        }
+    </style>
+    <title></title>
 </head>
-
 <body>
-	<form method="post" action="./WebForm1.aspx" id="form1">
+    <form method="post" action="./WebForm1.aspx" id="form1">
 
-		<div id="content">
-			<div id="header">
-				<div class='name'> Dennis </div>
-			</div>
-			<div id="UpdatePanel1">
+        <div id="content">
+            <div id="header">
+                <div class='name'> Dennis </div>
+            </div>
+            <div id="UpdatePanel1">
 
-				<div class="speech">
-					<div class="speech-bubble">
-						<div class="message"> Hey Arthur, how are you?</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble2">
-						<div class="message"> I'm doing great you should check out this new App called KokoTalk!</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble">
-						<div class="message"> Sure, sounds great!</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble2">
-						<div class="message"> Have you finished the C# project yet?</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble">
-						<div class="message"> Nope I'm still working on it.</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble2">
-						<div class="message"> Nice</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble">
-						<div class="message"> Are you free later for some coffee?</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble2">
-						<div class="message"> What???</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble">
-						<div class="message"> 😘</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
-				<div class="speech">
-					<div class="speech-bubble2">
-						<div class="message"> What???</div>
-						<div class="time">2018-07-31 5:43:48 PM</div>
-					</div>
-				</div>
+                <div class="speech">
+                    <div class="speech-bubble">
+                        <div class="message"> Hey Arthur, how are you?</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble2">
+                        <div class="message"> I'm doing great you should check out this new App called KokoTalk!</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble">
+                        <div class="message"> Sure, sounds great!</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble2">
+                        <div class="message"> Have you finished the C# project yet?</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble">
+                        <div class="message"> Nope I'm still working on it.</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble2">
+                        <div class="message"> Nice</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble">
+                        <div class="message"> Are you free later for some coffee?</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble2">
+                        <div class="message"> What???</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble">
+                        <div class="message"> 😘</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
+                <div class="speech">
+                    <div class="speech-bubble2">
+                        <div class="message"> What???</div>
+                        <div class="time">2018-07-31 5:43:48 PM</div>
+                    </div>
+                </div>
 
-				<span id="Timer1" style="visibility:hidden;display:none;"></span>
+                <span id="Timer1" style="visibility:hidden;display:none;"></span>
 
-			</div>
+            </div>
 
-			<div id="input">
+            <div id="input">
 
-				<div id="input-wrapper">
-					<input name="TextBox1" type="text" id="TextBox1" placeholder="Type your message" />
+                <div id="input-wrapper">
+                    <input name="TextBox1" type="text" id="TextBox1" placeholder="Type your message" />
 
-					<input type="submit" name="Button1" value="Send" id="Button1" />
-				</div>
-			</div>
+                    <input type="submit" name="Button1" value="Send" id="Button1" />
+                </div>
+            </div>
 
 
 
-		</div>
+        </div>
 
-	</form>
+    </form>
 </body>
-
 </html>

@@ -1,0 +1,35 @@
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\obj\Debug\WFCService.csprojAssemblyReference.cache
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\obj\Debug\WFCService.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\bin\WFCService.dll.config
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\bin\WFCService.dll
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\bin\WFCService.pdb
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\obj\Debug\WFCService.dll
+C:\Users\Dennis\Desktop\#Project\KokoTalk\WFCService\obj\Debug\WFCService.pdb
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\bin\WFCService.dll.config
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\bin\WFCService.dll
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\bin\WFCService.pdb
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\obj\Debug\WFCService.csprojAssemblyReference.cache
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\obj\Debug\WFCService.csproj.CoreCompileInputs.cache
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\obj\Debug\WFCService.dll
+C:\Users\henri\Desktop\#Project\KokoTalk_denns\WFCService\obj\Debug\WFCService.pdb
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\bin\WFCService.dll.config
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\bin\WFCService.dll
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\bin\WFCService.pdb
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\obj\Debug\WFCService.csprojAssemblyReference.cache
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\obj\Debug\WFCService.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\obj\Debug\WFCService.dll
+C:\Users\Dennis\Desktop\HenriC#\KokoTalk_denns\WFCService\obj\Debug\WFCService.pdb
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\bin\WFCService.dll.config
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\bin\WFCService.dll
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\bin\WFCService.pdb
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\obj\Debug\WFCService.csprojAssemblyReference.cache
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\obj\Debug\WFCService.csproj.CoreCompileInputs.cache
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\obj\Debug\WFCService.dll
+C:\Users\Dennis\Desktop\KokoTalk_denns\WFCService\obj\Debug\WFCService.pdb
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\bin\WFCService.dll.config
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\bin\WFCService.dll
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\bin\WFCService.pdb
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\obj\Debug\WFCService.csprojAssemblyReference.cache
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\obj\Debug\WFCService.csproj.CoreCompileInputs.cache
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\obj\Debug\WFCService.dll
+C:\Users\henri\Desktop\Presentation\KokoTalk_denns (1)\KokoTalk_denns\WFCService\obj\Debug\WFCService.pdb

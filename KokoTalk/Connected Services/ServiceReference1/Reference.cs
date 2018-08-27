@@ -15,7 +15,7 @@ namespace KokoTalk.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Post", Namespace="http://schemas.datacontract.org/2004/07/WCFKokoTalks")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Post", Namespace="http://schemas.datacontract.org/2004/07/WFCService")]
     [System.SerializableAttribute()]
     public partial class Post : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -75,68 +75,63 @@ namespace KokoTalk.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.KokoService")]
-    public interface KokoService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
+    public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KokoService/GetPost", ReplyAction="http://tempuri.org/KokoService/GetPostResponse")]
-        KokoTalk.ServiceReference1.Post[] GetPost(int profiletId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPost", ReplyAction="http://tempuri.org/IService1/GetPostResponse")]
+        KokoTalk.ServiceReference1.Post[] GetPost(string profileId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KokoService/GetPost", ReplyAction="http://tempuri.org/KokoService/GetPostResponse")]
-        System.Threading.Tasks.Task<KokoTalk.ServiceReference1.Post[]> GetPostAsync(int profiletId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPost", ReplyAction="http://tempuri.org/IService1/GetPostResponse")]
+        System.Threading.Tasks.Task<KokoTalk.ServiceReference1.Post[]> GetPostAsync(string profileId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KokoService/PushPost", ReplyAction="http://tempuri.org/KokoService/PushPostResponse")]
-        void PushPost(string query);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PushPost", ReplyAction="http://tempuri.org/IService1/PushPostResponse")]
+        void PushPost(string id, string text);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KokoService/PushPost", ReplyAction="http://tempuri.org/KokoService/PushPostResponse")]
-        System.Threading.Tasks.Task PushPostAsync(string query);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PushPost", ReplyAction="http://tempuri.org/IService1/PushPostResponse")]
+        System.Threading.Tasks.Task PushPostAsync(string id, string text);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface KokoServiceChannel : KokoTalk.ServiceReference1.KokoService, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : KokoTalk.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class KokoServiceClient : System.ServiceModel.ClientBase<KokoTalk.ServiceReference1.KokoService>, KokoTalk.ServiceReference1.KokoService {
+    public partial class Service1Client : System.ServiceModel.ClientBase<KokoTalk.ServiceReference1.IService1>, KokoTalk.ServiceReference1.IService1 {
         
-        public KokoServiceClient() {
+        public Service1Client() {
         }
         
-        public KokoServiceClient(string endpointConfigurationName) : 
+        public Service1Client(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public KokoServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public KokoServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public KokoServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public KokoTalk.ServiceReference1.Post[] GetPost(int profiletId) {
-            return base.Channel.GetPost(profiletId);
+        public KokoTalk.ServiceReference1.Post[] GetPost(string profileId) {
+            return base.Channel.GetPost(profileId);
         }
         
-        public System.Threading.Tasks.Task<KokoTalk.ServiceReference1.Post[]> GetPostAsync(int profiletId) {
-            return base.Channel.GetPostAsync(profiletId);
+        public System.Threading.Tasks.Task<KokoTalk.ServiceReference1.Post[]> GetPostAsync(string profileId) {
+            return base.Channel.GetPostAsync(profileId);
         }
         
-        public void PushPost(string query) {
-            base.Channel.PushPost(query);
+        public void PushPost(string id, string text) {
+            base.Channel.PushPost(id, text);
         }
         
-        public System.Threading.Tasks.Task PushPostAsync(string query) {
-            return base.Channel.PushPostAsync(query);
-        }
-
-        internal KokoTalk.Post[] GetPost(string id)
-        {
-            throw new NotImplementedException();
+        public System.Threading.Tasks.Task PushPostAsync(string id, string text) {
+            return base.Channel.PushPostAsync(id, text);
         }
     }
 }

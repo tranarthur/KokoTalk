@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,700');
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,500,600,700');
 
 body {
     margin: 0;
@@ -26,16 +26,20 @@ body {
     color: white;
 }
 
-#noaccount {
+#noaccount a{
     color: white;
     float: right;
     padding-top: 10px;
     font-size: 20px;
 }
 
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+
 #main {
     margin: auto;
-    width: 50%;
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -64,4 +68,7 @@ td {
 #submit {
     font-size: 20px;
     border: none;
+    background-color: white;
+    color: #007CFA;
+    font-weight: 500;
 }

@@ -40,6 +40,15 @@ namespace KokoTalk {
         protected global::System.Web.UI.WebControls.Label name2;
         
         /// <summary>
+        /// Image1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
+        
+        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace KokoTalk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label age;
-        
-        /// <summary>
-        /// sex control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sex;
         
         /// <summary>
         /// status control.
@@ -130,6 +130,15 @@ namespace KokoTalk {
         protected global::System.Web.UI.WebControls.Label school;
         
         /// <summary>
+        /// sex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sex;
+        
+        /// <summary>
         /// friends control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,24 @@ namespace KokoTalk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label friends;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
         /// post control.
@@ -148,13 +175,13 @@ namespace KokoTalk {
         protected global::System.Web.UI.WebControls.TextBox post;
         
         /// <summary>
-        /// Button1 control.
+        /// submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button submit;
         
         /// <summary>
         /// Literal1 control.
