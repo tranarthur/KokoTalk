@@ -22,6 +22,7 @@ User Profile Page
 
 [Richard McKay](https://github.com/RichardMcKay)
 - Signup Page
+- Database Design
 
 Myself
 - Overall application design
